@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Lion Stache</title>
+  <link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+
+  <!--IMPORT JQUERY MOBILE STUFF HERE-->
+  <link href="js/vendor/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" rel="stylesheet" />
+  <script src="js/vendor/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="js/vendor/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js" type="text/javascript"></script>
+
+  <style>
+    #homeBanner {
+      width: 100%;
+    }
+    
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .banner {
+      display: block;
+      width: 100%;
+    }
+    
+    #qrcode {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    #map2 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 320px;
+      height: 320px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .gridimage {
+      width: 50%;
+      float: left;
+    }
+
+    .fullimage {
+      width: 100%;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .activebutton {
+      color: #676768!important;
+      background-color: #262626!important;
+    }
+
+
+  </style>
+  
+
+  <!-- <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile.min.js"></script>
+  <script src="js/app.js"></script> -->
+
+  
+
+</head>
+
+<body>
+
+
+  <!--1. HOME PAGE-->
+  <div id="homeScreen" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div  data-theme="a" class="ui-block-a"><a href="#homeScreen" class="ui-btn activebutton">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn">Lyrics</a></div>
+    </header>
+
+    <div id="deviceready"></div>
+    <div data-role="content">
+
+    <img src="imgs/jambro_logo.png" class="banner" />
+
+      <div class="clearfix">
+        <div><a href="#drums"><img class="gridimage" src="imgs/jambro_drumGRID.png"></a></div>
+        <div><a href="#rudis"><img class="gridimage" src="imgs/jambro_rudiGRID.png"></a></div>
+        <div><a href="#uke"><img class="gridimage" src="imgs/jambro_ukeGRID.png"></a></div>
+        <div><a href="#lyrics"><img class="gridimage" src="imgs/jambro_lyricsGRID.png"></a></div>
+      </div>
+
+      <div class="forcepad"></div>
+      
+      <h1><br>Suggested Practice Schedules</h1>
+
+        <div data-role="collapsible">
+          <h3>10 minute</h3>
+          <ul>
+            <li>3 min - Warm Ups</li>
+            <li>3 min - Rudiments (MP related)</li>
+            <li>4 min - Musical Piece (MP)</li>
+          </ul>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>20 minute</h3>
+          <ul>
+            <li>6 min - Warm Ups</li>
+            <li>6 min - Rudiments (MP related)</li>
+            <li>8 min - Musical Piece (MP)</li>
+          </ul>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>30 minute</h3>
+          <ul>
+            <li>8 min - Warm Ups</li>
+            <li>11 min - Rudiments (MP related)</li>
+            <li>11 min - Musical Piece (MP)</li>
+          </ul>
+        </div>
+
+        <button type="button" name="onClickTest" onclick="onClick()">Best Practice Tips</button>
+
+    </div>
+     
+
+
+      <div data-role="footer" data-position='fixed' data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn">Gig Request</a>
+        </div>
+      </div>
+
+  </div>
+  <!--1. HOME PAGE-->
+
+
+
+
+  <!--2. DRUMS PAGE-->
+  <div id="drums" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div class="ui-block-a"><a href="#homeScreen" class="ui-btn">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn activebutton">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn">Lyrics</a></div>
+    </header>
+      
+      <div data-role="content">
+        <h1>Drums</h1>
+        <hr>
+
+        <h2>Stretches</h2>
+        <div data-role="collapsible">
+          <h3>Wrist</h3>
+          <ul><li>2-3 minutes</li>
+              <li>4 stretches (TR, TL, BR, BL)</li>
+          </ul>
+          <p>Top Stretch</p>
+          <img class="fullimage" src="imgs/wristT.jpg" />
+          <p>Bottom Stretch</p>
+          <img class="fullimage" src="imgs/wristB.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Prayer</h3>
+          <ul><li>1-2 minutes</li>
+              <li>1 stretch (Both hands)</li>
+          </ul>
+          <img class="fullimage" src="imgs/pray.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Full Arm</h3>
+          <ul><li>1-2 minutes</li>
+              <li>2 stretches (R, L)</li>
+          </ul>
+          <img class="fullimage" src="imgs/stick1.jpg" />
+          <p>Right Stretch</p>
+          <img class="fullimage" src="imgs/stickR.jpg" />
+          <p>Left Stretch</p>
+          <img class="fullimage" src="imgs/stickL.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Shake 'N Bake</h3>
+          <ul><li>15s-20s each hand</li>
+              <li>2 stretches (R, L)</li>
+          </ul>
+          <p>2 Even / 2 Extended</p>
+          <img class="fullimage" src="imgs/shake.jpg" />
+        </div>
+
+        <hr>
+
+
+        <h2>Warm-ups</h2>
+        <div data-role="collapsible">
+          <h3>8-on-a-hand</h3>
+            <img class="fullimage" src="imgs/8onahand.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Double Beat</h3>
+            <img class="fullimage" src="imgs/db1.jpg" />
+            <img class="fullimage" src="imgs/db2.jpg" />
+            <img class="fullimage" src="imgs/db3.jpg" />
+            <img class="fullimage" src="imgs/db4.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>7/8</h3>
+            <img class="fullimage" src="imgs/7-8.jpg" />
+        </div>
+
+        <hr>
+
+
+        <h2>Exercises</h2>
+        <div data-role="collapsible">
+          <h3>Singles (Ex. 2)</h3>
+          <p>*Accents across toms/cymbals</p>
+            <img class="fullimage" src="imgs/ex2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Doubles (Ex. 3)</h3>
+          <p>*Across drum set / Linear</p>
+            <img class="fullimage" src="imgs/ex3.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Paradiddles (Ex. 5)</h3>
+          <p>*Across drum set / Linear</p>
+            <img class="fullimage" src="imgs/ex5.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Sextuplets (Ex. 6)</h3>
+          <p>*Across drum set</p>
+            <img class="fullimage" src="imgs/ex6.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Flams (Ex. 7)</h3>
+          <p>*Across drum set</p>
+            <img class="fullimage" src="imgs/ex7.jpg" />
+        </div>
+
+        <hr>
+
+        <h2>Inspiration</h2>
+        <div data-role="collapsible">
+          <h3>COMING SOON</h3>
+          <p>.....</p>
+        </div>
+
+      </div>
+
+      <div data-role="footer" data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn">Gig Request</a>
+        </div>
+      </div>
+    </div>
+  <!--2. END DRUMS PAGE-->
+
+
+
+
+  <!--3. RUDIS PAGE-->
+  <div id="rudis" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div class="ui-block-a"><a href="#homeScreen" class="ui-btn">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn activebutton">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn">Lyrics</a></div>
+    </header>
+      
+      <div data-role="content">
+        <h1>Rudiments</h1>
+        <hr>
+
+        <h2>Stretches</h2>
+        <div data-role="collapsible">
+          <h3>Wrist</h3>
+          <ul><li>2-3 minutes</li>
+              <li>4 stretches (TR, TL, BR, BL)</li>
+          </ul>
+          <p>Top Stretch</p>
+          <img class="fullimage" src="imgs/wristT.jpg" />
+          <p>Bottom Stretch</p>
+          <img class="fullimage" src="imgs/wristB.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Prayer</h3>
+          <ul><li>1-2 minutes</li>
+              <li>1 stretch (Both hands)</li>
+          </ul>
+          <img class="fullimage" src="imgs/pray.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Full Arm</h3>
+          <ul><li>1-2 minutes</li>
+              <li>2 stretches (R, L)</li>
+          </ul>
+          <img class="fullimage" src="imgs/stick1.jpg" />
+          <p>Right Stretch</p>
+          <img class="fullimage" src="imgs/stickR.jpg" />
+          <p>Left Stretch</p>
+          <img class="fullimage" src="imgs/stickL.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Shake 'N Bake</h3>
+          <ul><li>15s-20s each hand</li>
+              <li>2 stretches (R, L)</li>
+          </ul>
+          <p>2 Even / 2 Extended</p>
+          <img class="fullimage" src="imgs/shake.jpg" />
+        </div>
+
+        <hr>
+
+        <h2>Warm-ups</h2>
+        <div data-role="collapsible">
+          <h3>8-on-a-hand</h3>
+            <img class="fullimage" src="imgs/8onahand.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Double Beat</h3>
+            <img class="fullimage" src="imgs/db1.jpg" />
+            <img class="fullimage" src="imgs/db2.jpg" />
+            <img class="fullimage" src="imgs/db3.jpg" />
+            <img class="fullimage" src="imgs/db4.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>7/8</h3>
+            <img class="fullimage" src="imgs/7-8.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Triplet Diddle</h3>
+            <img class="fullimage" src="imgs/tripdid.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>7/8 Paradiddle</h3>
+          <p>COMING SOON</p>
+        </div>
+
+        <hr>
+
+
+        <h2>Exercises</h2>
+        <div data-role="collapsible">
+          <h3>Accents (Ex. 1)</h3>
+            <img class="fullimage" src="imgs/ex1.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Singles (Ex. 2)</h3>
+            <img class="fullimage" src="imgs/ex2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Doubles (Ex. 3)</h3>
+            <img class="fullimage" src="imgs/ex3.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Paradiddles (Ex. 5)</h3>
+            <img class="fullimage" src="imgs/ex5.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Sextuplets (Ex. 6)</h3>
+            <img class="fullimage" src="imgs/ex6.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Flams (Ex. 7)</h3>
+            <img class="fullimage" src="imgs/ex7.jpg" />
+        </div>
+
+        <hr>
+
+
+        <h2>Rudiments</h2>
+        <div data-role="collapsible">
+          <h3>COMING SOON</h3>
+          <p>.....</p>
+        </div>
+
+        <hr>
+
+
+        <h2>Inspiration</h2>
+        <div data-role="collapsible">
+        <h3>COMING SOON</h3>
+          <p>.....</p>
+        </div>
+
+      </div>
+
+
+      <div data-role="footer" data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn">Gig Request</a>
+        </div>
+      </div>
+
+  </div>
+  <!--3. END RUDIS PAGE-->
+
+
+
+  <!--4. UKE PAGE-->
+  <div id="uke" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div class="ui-block-a"><a href="#homeScreen" class="ui-btn">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn activebutton">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn">Lyrics</a></div>
+    </header>
+      
+      <div data-role="content">
+        <h1>Ukulele</h1>
+        <hr>
+
+        <h2>Chords List</h2>
+        <div data-role="collapsible">
+          <h3>A key</h3>
+          <img class="fullimage" src="imgs/chords/a1.jpg" />
+          <img class="fullimage" src="imgs/chords/a2.jpg" />
+        </div>
+
+
+        <div data-role="collapsible">
+          <h3>B&#9837 key (= A&#35;)</h3>
+          <img class="fullimage" src="imgs/chords/bf1.jpg" />
+          <img class="fullimage" src="imgs/chords/bf2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>B key</h3>
+          <img class="fullimage" src="imgs/chords/b1.jpg" />
+          <img class="fullimage" src="imgs/chords/b2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>C key</h3>
+          <img class="fullimage" src="imgs/chords/c1.jpg" />
+          <img class="fullimage" src="imgs/chords/c2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>D&#9837 key (= C&#35;)</h3>
+          <img class="fullimage" src="imgs/chords/df1.jpg" />
+          <img class="fullimage" src="imgs/chords/df2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>D key</h3>
+          <img class="fullimage" src="imgs/chords/d1.jpg" />
+          <img class="fullimage" src="imgs/chords/d2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>E&#9837 key (= D&#35;)</h3>
+          <img class="fullimage" src="imgs/chords/ef1.jpg" />
+          <img class="fullimage" src="imgs/chords/ef2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>E key</h3>
+          <img class="fullimage" src="imgs/chords/e1.jpg" />
+          <img class="fullimage" src="imgs/chords/e2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>F key</h3>
+          <img class="fullimage" src="imgs/chords/f1.jpg" />
+          <img class="fullimage" src="imgs/chords/f2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>G&#9837 key (= F&#35;)</h3>
+          <img class="fullimage" src="imgs/chords/gf1.jpg" />
+          <img class="fullimage" src="imgs/chords/gf2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>G key</h3>
+          <img class="fullimage" src="imgs/chords/g1.jpg" />
+          <img class="fullimage" src="imgs/chords/g2.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>A&#9837 key (= G&#35;)</h3>
+          <img class="fullimage" src="imgs/chords/af1.jpg" />
+          <img class="fullimage" src="imgs/chords/af2.jpg" />
+        </div>
+
+        <hr>
+
+        <h2>Warm Up Songs</h2>
+        <div data-role="collapsible">
+          <h3>Hurricane (Thrice)</h3>
+          <img class="fullimage" src="imgs/h_uke.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Another Song About the Weekend (A Day to Remember)</h3>
+          <img class="fullimage" src="imgs/adtr_uke.jpg" />
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Don't Worry, Be Happy (Bobby McFerrin)</h3>
+          <img class="fullimage" src="imgs/dwbh_uke.jpg" />
+        </div>
+
+
+      </div>
+    
+      <div data-role="footer" data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn">Gig Request</a>
+        </div>
+      </div>
+
+  </div>
+  <!--4. END UKE PAGE-->
+
+
+  <!--5. LYRICS PAGE-->
+  <div id="lyrics" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div class="ui-block-a"><a href="#homeScreen" class="ui-btn">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn activebutton">Lyrics</a></div>
+    </header>
+      
+      <div data-role="content">
+        <h1>Lyrics</h1>
+        <hr>
+
+        <h2>Helpful Links</h2>
+          
+            <h3>Rhyming:</h3>
+              <p><a href="https://www.rhymezone.com/" >www.rhymezone.com</a></p>
+            <h3>Thesaurus:</h3>
+              <p><a href="http://www.thesaurus.com/" >www.thesaurus.com</a></p>
+            <h3>Definitions:</h3>
+              <p><a href="https://www.merriam-webster.com/dictionary/dictionary" >www.merriam-webster.com</a></p>
+          </u>
+
+
+        <hr>
+
+        <h2>Examples / Ideas</h2>
+        <div data-role="collapsible">
+          <h3>Fantasy</h3>
+            <p>EPOCH (BY THE GENTS)<br><i>Written by Cody Moulton, Jacob Farnsworth, Brandon Terrill</i></p>
+            <p>
+              INTRO <br>
+              Back in a place real far, <br>
+              There was a town that was famous for <br>
+              A dragon that could blacken the sky, <br>
+              As it would steal and kill and plunder, <br>
+              Making grown men cry. <br><br>
+
+              They lived like this until on one fateful day <br>
+              There came a knight in shining armor who would pave the way <br>
+              To freedom from this tyrant who reigned <br>
+              Because the courage of our knight was unrefrained. <br><br>
+
+              The townspeople came to give support to our knight <br>
+              And he said to them, with his eyes full of light, <br>
+              “These dragon attacks, they will never subside. <br>
+              So I’ll put an end to your oppression, for tonight…. <br>
+              I Ride.” <br><br><br>
+
+
+              VERSE I <br>
+              With the fervor of might, I charge my stallion onward. <br>
+              Wind bites my flesh, noble locks, they flow unconquered. <br><br>
+
+              I’m here to seize the beast, to take back control of my town. <br>
+              With my wrath released, I’m gonna give that drake the beatdown. <br><br>
+
+              I’m going down into his cave. <br>
+              I’ll throw him down into his grave. <br>
+              I’m gonna come in swinging. <br><br><br>
+
+
+              CHORUS <br>
+              Through the dead of the night, to the thick of the fight. <br>
+              Whoa! <br>
+              Storm the dragon’s lair to slay the beast who is dwelling there. <br>
+              Whoa! <br>
+              For the love of the girl will fuel this noble quest. <br>
+              Whoa! <br>
+              It’s the thrill of the kill, the power of will, <br>
+              To tan his hide, we will ride. <br>
+              It’s adventure time! <br><br><br>
+
+
+              VERSE II <br>
+              Passing hills of fire, his smoke consumes my country. <br>
+              My one and only desire: to fulfill and claim my bounty. <br><br>
+
+              A metal blade straight to his face. <br>
+              I’ll mount his head on my fireplace. <br>
+              Let me hear you sing it. <br><br><br>
+
+
+              CHORUS <br><br><br>
+
+
+              INTERLUDE <br>
+              This path of cinders hath led me here. <br>
+              With no surrender, I face my fear. <br><br>
+
+              ‘Tis that, what crap? Yon skull with sockets burning… <br>
+              ’Twas I signed up for that? My inner bowels are churning. <br><br>
+
+              For in a bout of brawn, dragon’s breath 'twould roast me. <br>
+              But, nay! <br>
+              With epoch verse I shalt claim my victory! <br><br><br>
+
+
+              RAP BATTLE <br>
+              Who dares to wake my slumber? <br>
+              I’ll cut ya down, and I don’t mean lumber. <br>
+              Eat ya whole, spit rhymes of gold, <br>
+              Imma pick your bones, I’m not playing holmes! <br><br>
+
+              Don’t mean to be boasting or bragging <br>
+              But your rhymes are sagging, <br>
+              They’re lacking substance, something to keep my attention, <br>
+              So let me teach you a lesson in the art of rhyme. <br>
+              You’re just a waste of my time. <br><br><br>
+
+
+              So you think you're good at rhyming, <br>
+              Well you'd better think again. <br>
+              I'm the king and queen of timing, <br>
+              I'm the best there's ever been. <br><br>
+
+              This knight in shining armor, <br>
+              With my long and shiny blade. <br>
+              I’m here to slay you dragon, <br>
+              And end your escapades. <br><br><br>
+
+
+              What's the matter knight, <br>
+              Ain’t you up for the fight? <br>
+              I got you st-ta-ta-ta-tuttering, <br>
+              But here I come running again. <br><br>
+
+              You bet I'm spitting lightening. <br>
+              Isn't it so frightening? <br>
+              Ripping it, flipping it <br>
+              And I know that you can't handle it. <br><br><br>
+
+
+              You might be fast and you might be quick, <br>
+              But here's a tip for ya: get a new trick! <br><br>
+
+              Your lines are lame and you ain't got game. <br>
+              This knight’s a boss who will end your fame. <br><br><br>
+
+
+              Enough of this drag - Imma roast ya, ghost ya. <br>
+              Better hold your buns cuz when I'm done they'll be toasted. <br><br><br>
+
+
+              Your time has come to take a bow <br>
+              As I strike you to the ground <br><br><br>
+
+
+              Puny human you're no match for me. <br>
+              I'll smite you, light you, you'll be history <br><br><br>
+
+
+              My mighty sword will remove your head <br>
+              And in one blow, you'll be dead. <br><br><br>
+
+
+              Come at me bro I can take your sword. <br>
+              Snap it in two and you'll be no more. <br>
+              I'm burning it, I'm winning it, I'm kicking it, <br>
+              Best be turning and running, <br>
+              Cuz you're done! <br><br><br>
+
+
+              CHORUS <br><br><br>
+
+
+              To Be Continued....
+            </p>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Inspirational</h3>
+          <p>A VOICE (BY THE GENTS)<br><i>Written by Cody Moulton, Jacob Farnsworth</i></p>
+          <p>
+            VERSE I <br>
+              Just wanna feel like I’m making a difference, <br>
+              Standing up for what’s right under all conditions. <br>
+              But it seems that every time I try I’m picking a side, <br>
+              I don’t know why. I’m not picking a fight. <br><br>
+
+              But here it goes, <br>
+              It’s the American way. <br>
+              Debate, irate, deface, we separate. <br>
+              Not victory for the people but victory for a side, <br>
+              Turning us against them, our family divides. <br><br>
+
+              Brother against brother, father against son. <br>
+              Civil war of words. Where’s the love gone? <br>
+              Knives aren’t the only weapon that leaves a scar, <br>
+              Makes a mark, cuts your heart, <br>
+              I can’t take it. <br>
+
+              Why’d the goal change? <br>
+              They rearrange the plot, just to stay on top. <br>
+              Well I’m still here. <br>
+              Screaming from the bottom, my voice suffocated <br>
+              Cuz this conversation, it doesn’t happen. <br><br><br>
+
+
+              CHORUS <br>
+              And the people all around me scream <br>
+              "Don't make a sound!" <br>
+              I want you to hear me. <br><br>
+
+              Inside I know what's right, <br>
+              I'll speak my mind, let it resound. <br>
+              I need you to hear me. <br><br><br>
+
+
+              VERSE II <br>
+              I’m searching for purpose, <br>
+              These words are not worthless. <br>
+              Digging through verses, <br>
+              Barely scratching the surface of these issues. <br>
+              Burning behind my face a crushing weight, <br>
+              Forcing me to just stay in place. <br><br>
+
+              Culture of gridlock that I’m trying to break. <br>
+              Opinions won’t budge, but there are lives at stake. <br>
+              Morality now decided by a collective vote, <br>
+              Religion seen as hate. Have we lost our way? <br><br>
+
+              Well I’m done staying silent I’m finding the might to fight it <br>
+              Cuz inside I can’t deny it, I know it’s wrong. <br>
+              We gotta come together. <br>
+              I will not stay quiet. <br>
+              One nation under God is how we’re united. <br><br>
+
+              I’m not casting the blame or pointing the finger, <br>
+              I got one goal here, to move this crowd. <br>
+              Are ya hearing my feeling? <br>
+              Open your hearts now and start the healing. <br><br><br>
+
+
+              CHORUS <br><br><br>
+
+
+              BRIDGE <br>
+              Don’t let them divide you, we all have a voice <br><br><br>
+
+
+              CHORUS
+          </p>
+        </div>
+
+
+      </div>
+    
+
+      <div data-role="footer" data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn">Gig Request</a>
+        </div>
+      </div>
+
+  </div>
+  <!--5. END LYRICS PAGE-->
+
+
+
+  <!--6. GIG PAGE-->
+  <div id="gigs" data-role="page">
+    <header data-role="header" data-position="fixed" class="center" data-theme="b">
+      <div class="ui-block-a"><a href="#homeScreen" class="ui-btn">Home</a></div>
+      <div class="ui-block-b"><a href="#drums" class="ui-btn">Drums</a></div>
+      <div class="ui-block-c"><a href="#rudis" class="ui-btn">Rudis</a></div>
+      <div class="ui-block-d"><a href="#uke" class="ui-btn">Uke</a></div>
+      <div class="ui-block-e"><a href="#lyrics" class="ui-btn">Lyrics</a></div>
+    </header>
+      
+      <div data-role="content">
+        <h1>Gigs</h1>
+        <hr>
+
+        <h3>Prep your contact with a venue here:</h3>
+        <form method="get" action="">
+          <fieldset class="ui-field-contain">
+            <label for="band">Your band name:</label>
+            <input type="text" name="band" id="band" value="" placeholder="Your band name"/><br>
+
+            <label for="email">Your email: </label>
+            <input type="email" name="email" id="email" value="" placeholder="Your Email"/><br>
+
+            <label for="date">Requested show date:</label>
+            <input type="date" name="date" id="date" value="" placeholder="Show Date"/>
+          </fieldset>
+
+
+          <fieldset class="ui-field-contain">
+          <label for="select1">Select a venue:</label>
+          <select name="select1" id="select1" data-native-menu="false">
+            <option>Choose One:</option>
+            <optgroup label="Orem">
+              <option value="value1">Up Up &amp; Away Studios</option>
+            </optgroup>
+            <optgroup label="Provo">
+              <option value="value5">The Velour</option>
+              <option value="value6" disabled="disabled">Gezzo Hall</option>
+              <option value="value7" disabled="disabled">Muse Music</option>
+              <option value="value8">Bill's Warehouse</option>
+              <option value="value9">The Radshack</option>
+              <option value="value10">The Wall</option>
+            </optgroup>
+            <optgroup label="Salt Lake City">
+              <option value="value5">Kilby Court</option>
+              <option value="value6">The Loading Dock</option>
+              <option value="value7" disabled="disabled">The Underground</option>
+              <option value="value8">The Woodshed</option>
+              <option value="value9">The Complex</option>
+              <option value="value10">In the Venue</option>
+            </optgroup>
+          </select>
+          </fieldset>
+
+
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <label for="rb5">30 minute set</label>
+            <input type="radio" name="rbtn" id="rb5" value="rb5" checked="checked"/>
+            <label for="rb6">60 minute set</label>
+            <input type="radio" name="rbtn" id="rb6" value="rb6"/>
+          </fieldset>
+
+          <div class="ui-field-contain">
+            <label for="details">Email message:</label>
+            <textarea id="details" rows="6"></textarea>
+          </div><br>
+
+          <label for="website">Your website / EPK:</label>
+          <input type="text" name="website" id="website" value="" placeholder="Link to your website"/>
+
+          <label for="music">Your music:</label>
+          <input type="text" name="music" id="music" value="" placeholder="Link to your music online"/>
+
+          <input type="submit" name="submit">
+
+         
+        </form>
+
+      </div>
+
+
+      <div data-role="footer" data-theme="b">
+        <div class="ui-grid-a center">
+          <a href="#gigs" class="ui-btn activebutton">Gig Request</a>
+        </div>
+      </div>
+    
+  </div>
+  <!--6. END GIG PAGE-->
+
+
+
+
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript">
+    app.initialize();
+  </script>
+
+  <!--
+	Admission
+	Directions
+	Parking
+	Hours
+	Volunteer
+	-->
+</body>
+
+</html>
